@@ -32,12 +32,37 @@ class App(customtkinter.CTk):
 
         self.btn_mostrar = customtkinter.CTkButton(
             master=self, text="Comenzar Ingreso", command=self.btn_comenzar_ingreso_on_click)
-        self.btn_mostrar.grid(row=2, padx=20, pady=20,
-                              columnspan=2, sticky="nsew")
+        self.btn_mostrar.grid(row=2, padx=20, pady=20, columnspan=2, sticky="nsew")
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        numero= 0
+        numero_max= None
+        numero_min= None
+        contador=0
+        bandera= True
+        
+        while bandera == True:
+            numero= prompt("UTN", "INGRESE NUMERO")
 
+            if numero == None:  #si apreto cancelar, que salga el programa
+                break
+
+            while (numero == None) or (numero.isdigit() == False):   #ojo que si pones al reves las condiciones, falla. importa el orden en este caso
+                numero= prompt("UTN", "ERROR INGRESE NUMERO")
+                
+            numero = int(numero)
+
+            if  (numero_max == None) or (numero_max < numero):
+                numero_max = numero
+
+            if  (numero_min == None) or (numero_min > numero):
+                numero_min = numero
+        
+
+        self.txt_minimo.delete(0,tkinter.END)
+        self.txt_maximo.delete(0,tkinter.END)
+        self.txt_maximo.insert(0,numero_max)
+        self.txt_minimo.insert(0,numero_min)
 
 if __name__ == "__main__":
     app = App()

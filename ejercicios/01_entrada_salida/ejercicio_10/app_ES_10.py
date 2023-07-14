@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Ivan 
+apellido: Ramunda
 ---
 Ejercicio: entrada_salida_10
 ---
@@ -49,8 +49,12 @@ class App(customtkinter.CTk):
         descuento = float(descuento) 
         descuento_porcentaje = descuento*importe/100
         total_importe = importe - descuento_porcentaje
+        self.txt_importe.delete(0,tkinter.END)
+        self.txt_descuento.delete(0,tkinter.END)
 
-        alert("Descuento", f"El importe final con descuento es de {total_importe}")
+
+
+        alert("Descuento", f"El importe final con descuento es de {total_importe}$")
 
 
 if __name__ == "__main__":

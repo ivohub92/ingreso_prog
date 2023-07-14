@@ -5,7 +5,11 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+
+Nombre: Ivan
+Apellido: Ramunda
 Enunciado:
+
 Para el departamento de facturación:
     A.	Ingresar tres precios de productos y mostrar la suma de los mismos.
     B.	Ingresar tres precios de productos y mostrar el promedio de los mismos.
@@ -58,6 +62,7 @@ class App(customtkinter.CTk):
 
         suma = producto_1 + producto_2 + producto_3
 
+       
         alert("Suma total", f"la suma total de productos es de {suma}$")
     def btn_promedio_on_click(self):
         producto_1 = self.txt_importe_1.get()
@@ -71,7 +76,7 @@ class App(customtkinter.CTk):
         suma = producto_1 + producto_2 + producto_3
 
         promedio = suma/3
-        alert("Promedio",f"El promedio es {promedio}$")
+        alert("Promedio",f"El promedio es {promedio:.2f}$")
 
     def btn_total_iva_on_click(self):
 
@@ -88,6 +93,7 @@ class App(customtkinter.CTk):
 
 
         alert("Suma total", f"El precio final de productos es de {suma_iva}$")
+        
 
     
 if __name__ == "__main__":

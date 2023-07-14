@@ -32,7 +32,31 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        
+        numero= 0
+        suma=0
+        contador=0
+        bandera= True
+        
+        while bandera == True:
+            numero= prompt("UTN", "INGRESE NUMERO")
+
+            if numero == None:  #si apreto cancelar, que salga el programa
+                break
+
+            while (numero == None) or (numero.isdigit() == False):   #ojo que si pones al reves las condiciones, falla. importa el orden en este caso
+                numero= prompt("UTN", "ERROR INGRESE NUMERO")
+                
+
+            contador= contador + 1
+            numero= int(numero)
+            suma= numero + suma
+
+        promedio= suma/contador
+        self.txt_suma_acumulada.delete(0,tkinter.END)
+        self.txt_promedio.delete(0,tkinter.END)
+        self.txt_suma_acumulada.insert(0,suma)
+        self.txt_promedio.insert(0,promedio)
 
     
 if __name__ == "__main__":

@@ -5,6 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+
+Alumno: Ivan Ramunda
 Todas las lámparas están  al mismo precio de $800 pesos final.
 		A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
 		B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
@@ -38,7 +40,78 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        cantidad= int(self.combobox_cantidad.get())
+        marca= self.combobox_marca.get()
+        precio= 800
+        descuento= 0.0
+        '''
+        if cantidad>=6:
+            descuento= 0.5            
+        elif cantidad==5 and marca=="Argentinaluz":
+            descuento= 0.4            
+        elif cantidad==5: 
+            descuento= 0.3
+        elif cantidad==4 and (marca=="Argentinaluz" or marca=="FelipeLamparas"):
+            descuento= 0.25
+        elif cantidad==4:
+            descuento=0.2
+        elif cantidad==3 and marca=="Argentinaluz":
+            descuento=0.15
+        elif cantidad==3 and marca== "FelipeLamparas":
+            descuento=0.10
+        elif cantidad==3:
+            descuento=0.05
+        
+        precio_compra= cantidad*precio*(1-descuento)
+        
+        if precio_compra>4000:
+            precio_compra= precio_compra*0.95
+        else:
+            precio_compra=precio_compra
+'''
+        if cantidad<6:
+            match cantidad:
+                case5:
+                    if marca=="ArgentinaLuz":
+                        descuento= 0.4
+                    else:
+                        descuento= 0.3
+                case 4:
+                    if marca=="ArgentinaLuz" or "FelipeLamparas":
+                        descuento= 0.25
+                    else:
+                        descuento=0.2
+                case 3:
+                    if marca=="ArgentinaLuz":
+                        descuento= 0.15
+                    elif marca=="FelipeLamparas":
+                        descuento= 0.10
+                    else:
+                        descuento=0.05
+                case _:
+                    pass
+        else:
+            descuento= 0.5
+
+        precio_compra= cantidad*precio*(1-descuento)
+        
+        if precio_compra>4000:
+            precio_compra= precio_compra*0.95
+        else:
+            precio_compra=precio_compra
+
+
+        alert("UTN", f"El precio es {precio_compra}$")
+        
+        
+'''
+       
+'''
+        
+            
+
+
+
         
     
 if __name__ == "__main__":

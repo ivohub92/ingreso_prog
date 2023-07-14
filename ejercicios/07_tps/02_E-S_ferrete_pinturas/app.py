@@ -59,8 +59,7 @@ class App(customtkinter.CTk):
         temp_f = self.txt_temperatura_f.get()
         temp_f = float(temp_f)
         farenh = (temp_f + 32)* 9/5 
-        farenh = str(farenh)
-        alert("Celsius a Farenheit", "La temperatura en farenheit es " + farenh)
+        alert("Celsius a Farenheit", f"La temperatura en farenheit es: {farenh:.2f}°")
     
     
 if __name__ == "__main__":
