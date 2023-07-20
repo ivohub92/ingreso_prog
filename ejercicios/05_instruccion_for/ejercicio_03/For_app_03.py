@@ -29,7 +29,14 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        edad= int(self.txt_repetir.get())
+        mensaje= "HOLA UTN FRA"
+       
+        
+        for hola in range(0, edad):
+            alert("UTN", mensaje)
+
+
 
         
         

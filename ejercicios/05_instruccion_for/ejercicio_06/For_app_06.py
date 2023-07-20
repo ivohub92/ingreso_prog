@@ -22,10 +22,22 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+
+        numero= prompt("UTN", "INGRESE NUMERO")
+        numero= int(numero)
+        
+        for i in range(0, numero):
+            cuenta= i% 2
+            if cuenta == 0:
+                alert("UTN", f'(LOS NUMERO PARES SON {i}')
+        
+
+
+
         
     
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
     app.mainloop()
+    

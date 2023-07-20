@@ -24,7 +24,10 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        
+
+        for datos in self.lista_datos:
+            alert( "UTN", f"LOS DATOS SON: {datos}")
         
         
     

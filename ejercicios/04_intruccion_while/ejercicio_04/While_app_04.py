@@ -26,7 +26,7 @@ class App(customtkinter.CTk):
     
     def btn_validar_numero_on_click(self):
         numero= float(prompt("UTN","INGRESE NUMERO"))
-        while(numero>9):
+        while(numero>=9):
             numero= float(prompt("UTN","ERROR INGRESE NUMERO VALIDO"))
     
 if __name__ == "__main__":

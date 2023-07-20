@@ -22,7 +22,21 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero= prompt("UTN", "INGRESE NUMERO")
+        numero= int(numero)
+        numero= numero + 1
+        contador= 0
+        
+        for i in range(0, numero):
+            cuenta = 0
+            if (i >0):
+                cuenta= numero % i
+            
+            if (cuenta == 0) and (i>0):
+                contador= contador +1
+        
+        
+        alert("UTN", f'(LA CANTIDA DE DIVISORES SON {contador}')
         
     
 if __name__ == "__main__":

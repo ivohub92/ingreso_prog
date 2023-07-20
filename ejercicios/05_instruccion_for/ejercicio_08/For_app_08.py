@@ -21,7 +21,28 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero= prompt("UTN", "INGRESE NUMERO")
+        numero= int(numero)
+        contador= 0
+        
+        
+        for i in range(2, numero):
+            
+            cuenta= numero % i
+            
+            if (cuenta == 0):
+                contador= contador +1
+            
+        if contador == 0:
+            mensaje= f"El {numero} es numero primo"
+        else:
+            mensaje= f"El {numero} no es numero primo"
+
+        alert("UTN", mensaje)
+        print
+        
+        
+        
     
 if __name__ == "__main__":
     app = App()

@@ -34,19 +34,16 @@ class App(customtkinter.CTk):
     def btn_comenzar_ingreso_on_click(self):
         numero= 1
         acumulador=0
-        multiplo=1
+        multiplo=0
         bandera= True
         while bandera == True and numero != 0:
             numero= prompt("UTN", "INGRESE NUMERO")
 
             if numero == None:  #si apreto cancelar, que salga el programa
                 break
-            elif numero[0:1] == "-":
-                if not numero[1:len(numero)].isdigit():
-                    continue
-            else:
-                while (numero == None) or (numero.isnumeric() == False):   #ojo que si pones al reves las condiciones, falla. importa el orden en este caso
-                    numero= prompt("UTN", "ERROR INGRESE NUMERO")
+
+            while (numero == None) or (numero.isdigit() == False):   #ojo que si pones al reves las condiciones, falla. importa el orden en este caso
+                numero= prompt("UTN", "ERROR INGRESE NUMERO")
             
             numero= int(numero)
             if numero>0:

@@ -33,7 +33,44 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        contador_positivos=0
+        contador_negativos=0
+        contador_ceros=0
+        bandera=True
+        acumulado_pos=0
+        acumulado_neg=0
+        suma_pos=0
+        suma_neg=0
+        bandera= True
+        numero=0
+
+        while bandera == True:
+            numero= prompt("UTN", "INGRESE NUMERO")
+
+            if numero == None:
+                break
+
+            while (numero == None) or (numero.isdigit() == False):   #ojo que si pones al reves las condiciones, falla. importa el orden en este caso
+                numero= prompt("UTN", "ERROR INGRESE NUMERO")
+            
+            numero= int(numero)
+            if numero>0:
+                acumulado_pos= numero + acumulado_pos
+                contador_positivos= contador_positivos + 1
+            elif numero==0:
+                contador_ceros= contador_ceros + 1
+            else:
+                acumulado_neg= numero + acumulado_neg
+                contador_negativos= contador_negativos+1
+        
+        diferencias_contadores= acumulado_pos - acumulado_neg 
+
+        alert("UTN",f"La suma acumulada de positivos es {acumulado_pos} La de positivos es {acumulado_neg} Hubo {contador_positivos} numeros positivos, {contador_negativos} negativos Y {contador_ceros} ceros ingresados. La diferencia entre numeros positivos y negativos es {diferencias_contadores}")
+        
+
+
+
+
 
     
 if __name__ == "__main__":

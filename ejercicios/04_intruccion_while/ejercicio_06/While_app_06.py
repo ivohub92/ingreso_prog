@@ -43,7 +43,7 @@ class App(customtkinter.CTk):
 
             contador= contador + 1
             numero= int(numero)
-            suma= numero + numero
+            suma= numero + suma
 
         promedio= suma/contador
         self.txt_suma_acumulada.insert(0,suma)

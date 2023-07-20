@@ -71,7 +71,7 @@ class App(customtkinter.CTk):
 '''
         if cantidad<6:
             match cantidad:
-                case5:
+                case 5:
                     if marca=="ArgentinaLuz":
                         descuento= 0.4
                     else:

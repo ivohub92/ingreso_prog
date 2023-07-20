@@ -52,7 +52,37 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        estacion =self.combobox_estaciones.get()
+        destino =self.combobox_destino.get()
+        variacion= 0
+        match estacion:
+            case "Invierno":
+                match destino:
+                    case "Bariloche":
+                        variacion=0.2
+                    case "Mar Del Plata":
+                        variacion= -0.2
+                    case _:
+                        variacion= -0.1
+            case "Verano":
+                match destino:
+                    case "Bariloche":
+                        variacion=-0.2
+                    case "Cataratas"| "Cordoba":
+                        variacion= 0.1
+                    case "Mar Del Plata":
+                        variacion= 0.2
+            case _:
+                match destino:
+                    case "Cordoba":
+                        variacion=0
+                    case _:
+                        variacion=0.1
+
+        tarifa= 15000*(1+variacion)
+        alert("UTN",f"LA TARIFA ES {tarifa}")
+
+                    
             
     
 if __name__ == "__main__":
